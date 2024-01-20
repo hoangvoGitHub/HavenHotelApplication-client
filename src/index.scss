@@ -1,0 +1,20 @@
+@import "bootstrap/scss/bootstrap";
+:root {}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @apply lg:text-[62.5%] md:text-[62.5%] text-[50%];
+}
+
+div{
+  @apply bg-red;
+}
+
+/* fonts */
+/* @font-face {
+  font-family: "";
+  src: url();
+} */
