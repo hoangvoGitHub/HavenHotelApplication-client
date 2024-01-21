@@ -1,10 +1,15 @@
-import './App.scss'
+import "./index.scss";
+import RoomSearch from "./components/common/RoomSearch";
+import MainHeader from "./components/layout/MainHeader";
 
-// or, specify which plugins you need:
 function App() {
-
   return (
-    <button type="button" className="btn btn-primary">Primary</button>
-  )
+    <section>
+      <MainHeader />
+      <div className="container">
+        <RoomSearch />
+      </div>
+    </section>
+  );
 }
 export default App;
