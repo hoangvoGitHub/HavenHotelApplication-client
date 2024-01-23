@@ -31,3 +31,12 @@ export const updateRoom = async () => {
         throw new Error('Can not update room');
     }
 }
+
+export const deleteRoom = async () => {
+    try {
+        const response = await instance.delete("room/:roomId");
+        return response.data;
+    } catch (error) {
+        throw new Error('Can not delete room');
+    }
+}

@@ -5,6 +5,7 @@ import Logout from "../pages/Auth/LogOut";
 import Signup from "../pages/Auth/Signup";
 import Room from "../pages/Room/Room";
 import EditRoom from "../pages/Room/EditRoom";
+import ExistingRooms from "../pages/Room/ExistingRooms";
 
 export const router = createBrowserRouter([
   {
@@ -12,12 +13,16 @@ export const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/room",
+    path: "/rooms",
     element: <Room />,
   },
   {
-    path: "/room/edit/:roomId",
+    path: "/rooms/edit/:roomId",
     element: <EditRoom />,
+  },
+  {
+    path: "/rooms/exist",
+    element: <ExistingRooms />
   },
   {
     path: "/auth/login",
