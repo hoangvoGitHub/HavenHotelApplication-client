@@ -4,6 +4,7 @@ import RoomFilter from "../../components/common/RoomFilter";
 import RoomPaginator from "../../components/common/RoomPagination";
 import RoomCard from "./RoomCard";
 import React from "react";
+import { getAllRooms } from "../../utils/apiFunctions";
 
 const Room = () => {
   const [data, setData] = React.useState([]);
@@ -13,6 +14,19 @@ const Room = () => {
   const [roomsPerPage] = React.useState(6);
   const [filteredData, setFilteredData] = React.useState([{ id: "" }]);
 
+  React.useEffect(() => {
+    setIsLoading(true);
+    getAllRooms()
+      .then((data) => {
+        setData(data);
+        setFilteredData(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
+      });
+  }, []);
   if (isLoading) {
     return <div>Loading rooms.....</div>;
   }
@@ -38,8 +52,9 @@ const Room = () => {
     <Container>
       <Row>
         <Col md={6} className="mb-3 mb-md-0">
-          <RoomFilter data={data} setFilteredData={filteredData} />
+          <RoomFilter data={data} setFilteredData={setFilteredData} />
         </Col>
+
         <Col md={6} className="d-flex align-items-center justify-content-end">
           <RoomPaginator
             currentPage={currentPage}
@@ -48,6 +63,7 @@ const Room = () => {
           />
         </Col>
       </Row>
+
       <Row>{renderRooms()}</Row>
 
       <Row>

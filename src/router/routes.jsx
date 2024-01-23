@@ -4,6 +4,7 @@ import Login from "../pages/Auth/Login";
 import Logout from "../pages/Auth/LogOut";
 import Signup from "../pages/Auth/Signup";
 import Room from "../pages/Room/Room";
+import EditRoom from "../pages/Room/EditRoom";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
   {
     path: "/room",
     element: <Room />,
+  },
+  {
+    path: "/room/edit/:roomId",
+    element: <EditRoom />,
   },
   {
     path: "/auth/login",

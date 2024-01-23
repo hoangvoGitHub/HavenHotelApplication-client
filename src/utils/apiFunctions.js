@@ -11,3 +11,23 @@ export const getAllRooms = async () => {
         throw new Error('Can not get all rooms');
     }
 }
+
+export const getRoomById = async () => {
+    try {
+        const response = await instance.get("/room/:roomId");
+        return response.data;
+    } catch (error) {
+        throw new Error('Can not find room');
+    }
+}
+
+export const updateRoom = async () => {
+    try {
+        const response = await instance.patch("/room/:roomId", {
+
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error('Can not update room');
+    }
+}
