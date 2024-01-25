@@ -106,7 +106,7 @@ const ExistingRooms = () => {
               </Col>
 
               <Col md={6} className="d-flex justify-content-end">
-                <Link to={"/add-room"}>
+                <Link to={"/room/add"}>
                   <FaPlus /> Add Room
                 </Link>
               </Col>
