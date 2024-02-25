@@ -9,6 +9,11 @@ import ExistingRooms from "../pages/room/ExistingRooms";
 import AddRoom from "../pages/room/AddRoom";
 import Admin from "../pages/admin/Admin";
 import Booking from "../pages/booking/Booking";
+import FindBooking from "../pages/booking/FindBooking";
+import SuccessBooking from "../pages/booking/SuccessBooking";
+import Checkout from "../pages/booking/Checkout";
+import RoomListing from "../pages/room/RoomListing";
+import Profile from "../pages/auth/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -32,12 +37,32 @@ export const router = createBrowserRouter([
     element: <AddRoom />,
   },
   {
+    path: "room/listing",
+    element: <RoomListing />,
+  },
+  {
     path: "/booking",
     element: <Booking />,
   },
   {
+    path: "/booking/find",
+    element: <FindBooking />,
+  },
+  {
+    path: "booking/success",
+    element: <SuccessBooking />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
+  },
+  {
     path: "/admin",
     element: <Admin />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
   {
     path: "/auth/login",

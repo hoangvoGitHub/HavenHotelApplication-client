@@ -3,6 +3,16 @@ const instance = axios.create({
     baseURL: "http://localhost:8080",
 });
 
+// user
+
+export const getUser = async () => {
+
+}
+
+export const deleteUser = async () => {
+
+}
+
 // rooms
 
 export const getAllRooms = async () => {
@@ -72,4 +82,16 @@ export const cancelBooking = async (bookingId) => {
     } catch (error) {
         throw new Error('Can not cancel booking');
     }
+}
+
+export const getBookingByConfirmationCode = async () => {
+
+}
+
+export const getBookingsByUserId = async () => {
+
+}
+
+export const bookRoom = async () => {
+
 }
